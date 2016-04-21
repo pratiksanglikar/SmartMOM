@@ -1,4 +1,25 @@
 <div>
-    {{message}}
-    <button kendo-button> Record </button>
+    <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
+        <!-- Start controls, exposed via recorder-->
+        <div ng-if="recorder.isAvailable">
+            <button kendo-button ng-click="recorder.startRecord()" type="button" ng-disabled="recorder.status.isRecording">
+                Start Recording
+            </button>
+            <button kendo-button  ng-click="recorder.stopRecord()" type="button" ng-disabled="recorder.status.isRecording === false">
+                Stop Recording
+            </button>
+            <button kendo-button  ng-click="recorder.playbackRecording()" type="button"
+                    ng-disabled="recorder.status.isRecording || !recorder.audioModel">
+                Play Back
+            </button>
+            <button kendo-button ng-click="recorder.upload()" type="button">
+                Upload
+            </button>
+        </div>
+
+        <div ng-if="!recorder.isAvailable">
+            Audio Recoding is not supported by your browser.
+        </div>
+        <!-- End controls-->
+    </ng-audio-recorder>
 </div>

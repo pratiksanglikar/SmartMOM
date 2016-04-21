@@ -1,20 +1,22 @@
 {
-	"name": "SmartMOM",
-	"version": "0.0.1",
-    "private": true,
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "4.13.x",
-		"cfenv": "1.0.x",
-		"cookie-parser": "~1.4.1",
-		"body-parser": "~1.15.0",
-		"http": "~0.0.0",
-		"ejs": "~2.4.1"
-	},
-	"repository": {},
-	"engines": {
-		"node": "4.2.x"
-	} 
+  "name": "SmartMOM",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.0",
+    "cfenv": "1.0.x",
+    "cookie-parser": "~1.4.1",
+    "crypto": "0.0.3",
+    "ejs": "~2.4.1",
+    "express": "4.13.x",
+    "http": "~0.0.0",
+    "multer": "^1.1.0"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.2.x"
+  }
 }

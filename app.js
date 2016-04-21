@@ -6,6 +6,7 @@ var http = require("http");
 var routes = require('./routes/index');
 var app = express();
 var cfenv = require('cfenv');
+var recordingRoute = require("./routes/recordings");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use("/recordings", recordingRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -53,7 +55,7 @@ app.use(function(err, req, res, next) {
 });
 
 http.createServer(app).listen(cfenv.getAppEnv().port, function() {
-  console.log("Server started on port : " , app.get("port"));
+  console.log("Server started on port : " , cfenv.getAppEnv().port);
 });
 
 module.exports = app;
