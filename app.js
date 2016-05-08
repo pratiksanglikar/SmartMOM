@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require("http");
 var routes = require('./routes/index');
+var homeRoute = require('./routes/home');
 var app = express();
 var cfenv = require('cfenv');
 var recordingRoute = require("./routes/recordings");
@@ -20,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use("/recordings", recordingRoute);
-
+app.use("/home", homeRoute);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
