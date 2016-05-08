@@ -46,6 +46,7 @@ router.post('/', upload, function(req, res) {
 
 
 router.get("/posttowatson", function (req, res) {
+	console.log("Request got");
 	watson_handler.postToWatson();
 	res.send({
 		status: "OK!"
