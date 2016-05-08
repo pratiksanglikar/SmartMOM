@@ -1,0 +1,3 @@
+mongodb://smartmom:smartmom@ds019481.mlab.com:19481/smartmom
+
+mongo ds019481.mlab.com:19481/smartmom -u smartmom -p smartmom
