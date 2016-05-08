@@ -11,5 +11,5 @@ app.config(["$routeProvider","$locationProvider","recorderServiceProvider",funct
 		redirectTo: "/index"
 	});
 	$locationProvider.html5Mode(true);
-	RecorderServiceProvider.withMp3Conversion(true);
+	RecorderServiceProvider.withMp3Conversion(false);
 }]);

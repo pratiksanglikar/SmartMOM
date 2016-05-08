@@ -5,14 +5,26 @@ var express = require('express');
 var router = express.Router();
 var crypto = require("crypto");
 var multer = require('multer');
-
-var storage = multer.diskStorage({
+var watson_handler = require("../javascripts/watson/watson_handler");
+/*var storage = multer.diskStorage({
 	destination:  './uploads/',
 	filename: function (req, file, cb) {
 		crypto.pseudoRandomBytes(16, function (err, raw) {
 			if (err)
 				return cb(err);
-			cb(null, raw.toString('hex') + ".mp3");
+			cb(null, raw.toString('hex') + ".wav");
+		});
+	}
+});*/
+
+var storage = multer.diskStorage({
+	destination:  './uploads/',
+	filename: function (req, file, cb) {
+		crypto.pseudoRandomBytes(16, function (err, raw) {
+			if (err) {
+				return cb(err);
+			}
+			cb(null, "sample.wav");
 		});
 	}
 });
@@ -22,13 +34,21 @@ var upload = multer({
 	}).single('file');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	res.redirect('/#record');
 });
 
 router.post('/', upload, function(req, res) {
 	res.send({
 		status: "OK"
+	});
+});
+
+
+router.get("/posttowatson", function (req, res) {
+	watson_handler.postToWatson();
+	res.send({
+		status: "OK!"
 	});
 });
 
