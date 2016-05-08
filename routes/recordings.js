@@ -35,7 +35,8 @@ var upload = multer({
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	res.redirect('/#record');
+	console.log("Got request");
+	res.render('record');
 });
 
 router.post('/', upload, function(req, res) {
