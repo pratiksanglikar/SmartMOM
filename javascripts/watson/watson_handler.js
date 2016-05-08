@@ -20,7 +20,7 @@ var concepts_insights = watson.concept_insights({
 });
 
 var params = {
-	audio: fs.createReadStream('uploads/sample1.wav'),
+	audio: fs.createReadStream('uploads/sample2.wav'),
 	content_type: 'audio/wav',
 	timestamps: true,
 	word_alternatives: 0.9,
@@ -31,26 +31,30 @@ var params = {
 exports.postToWatson = function () {
 	speech_to_text.recognize(params, function(err, transcript) {
 		if (err){
-			console.log(err);
+			console.log("Error while uploading sound - " + err);
 		}
 		else
 		{
-			var transJson = JSON.stringify(transcript, null, 2);
-			//console.log(transJson);
-			console.log(transcript.results[0].alternatives[0].transcript);
+			var finalTextString = "";
+			//console.log(transcript.results[0].alternatives[0].transcript);
+			for(var i = 0; i < transcript.results.length; i++) {
+				finalTextString += transcript.results[i].alternatives[0].transcript;
+			}
+			console.log("Formed String : " + finalTextString);
 			alchemy.sentiment({
-				text: "What about I told you since the first day you stepped into my. There are three ways to make a living in this biz. First. The smaller. Or cheat. I don't cheat. I don't know I like to think we have some pretty smart people in this building. Sure is a hell of a lot easier to just be first. So it all today. Saudi impossible son. Yes but at what cost. I have to pay. Really. I think so. Where is this going to come back to us. Everywhere. Sam I don't think you seem to understand what your boy is just sad. I made. How would you do. Well you call the traders in for the normal six thirty meeting to be honest with them because they're going to know it's the end either way. So you gonna have to throw me a bone in a pretty big one. And then you've got to come out of the gate storming. No swaps no nothing. Forty percent done by ten fifteen by eleven o'clock all your trades have to be gone because by lunch time words going to be out. And by two o'clock you gonna be selling at sixty five cents on the dollar if you're lucky. And then the feds going to be in here up your **** trying to slow you down. Ramesh and slow you down. You can't stop you. Just to sell. But John. Even if. We managed to. Pull that off in that sang some. The real question is. Who is selling the sting. Same people will be senator over the last two years and whoever else by. John. If you do this. You will kill the market for years it's over. And you're selling something that you know has no value. We are selling to willing buyers of the car and found market price. So that we may survive you will never sell anything to any of those people ever again I understand do you. Do you. This is it. I'm telling you this is it. Nnj. I. Well. Fineness. "
+				text: finalTextString
 			}, function (error, response) {
 				if(error) {
-					console.log("Error in Alchemy - " + error);
+					console.log("Error in Sentiment - " + error);
 				} else {
-					console.log("Response of Alchemy - " + JSON.stringify(response, null, 2));
+					console.log("Response of Sentiment - " + JSON.stringify(response, null, 2));
 				}
 			});
 
 
 			alchemy.relations({
-				text: transcript.results[0].alternatives[0].transcript
+				/*text: finalTextString*/
+				text: "hi my name is mark mark until glad to meet you yeah so are you from I'm from Houston Texas all I'm from southern California what year are you I'm a freshman this is my first year to so make you decide to come to California for school I hear Austin is a good school Sir right but I think Berkeley's better so is this where you want to come tell you the truth I want to go to Stanford I made it on the waiting list but ninety nine percent of the people accepted to Stanford go there like who wouldn't right very true but this is still a good school I'm not complaining I just know that I want to come to California Texas is cool and all but I wanted to experience different things that's good do you know what you plan on majoring in I was thinking about political science but now I'm leaning towards English literature how about you I plan on majoring in double the do you know where the Smith building is I have to pick up the syllabus for my psychology class I missed the first day that's a great start it's over there by the library it was nice meeting you yeah should hang out later cool assist morning class then alright later"
 			}, function (error, response) {
 				if(error) {
 					console.log("Error in Relations - " + error);
@@ -61,7 +65,7 @@ exports.postToWatson = function () {
 
 			concepts_insights.graphs.annotateText({
 				graph: '/graphs/wikipedia/en-latest',
-				text: "What about I told you since the first day you stepped into my. There are three ways to make a living in this biz. First. The smaller. Or cheat. I don't cheat. I don't know I like to think we have some pretty smart people in this building. Sure is a hell of a lot easier to just be first. So it all today. Saudi impossible son. Yes but at what cost. I have to pay. Really. I think so. Where is this going to come back to us. Everywhere. Sam I don't think you seem to understand what your boy is just sad. I made. How would you do. Well you call the traders in for the normal six thirty meeting to be honest with them because they're going to know it's the end either way. So you gonna have to throw me a bone in a pretty big one. And then you've got to come out of the gate storming. No swaps no nothing. Forty percent done by ten fifteen by eleven o'clock all your trades have to be gone because by lunch time words going to be out. And by two o'clock you gonna be selling at sixty five cents on the dollar if you're lucky. And then the feds going to be in here up your **** trying to slow you down. Ramesh and slow you down. You can't stop you. Just to sell. But John. Even if. We managed to. Pull that off in that sang some. The real question is. Who is selling the sting. Same people will be senator over the last two years and whoever else by. John. If you do this. You will kill the market for years it's over. And you're selling something that you know has no value. We are selling to willing buyers of the car and found market price. So that we may survive you will never sell anything to any of those people ever again I understand do you. Do you. This is it. I'm telling you this is it. Nnj. I. Well. Fineness. "
+				text: finalTextString
 			}, function(err, res) {
 				if (err)
 					console.log(err);
