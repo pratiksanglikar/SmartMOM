@@ -14,7 +14,9 @@
     "express": "4.13.x",
     "fs-extra": "^0.30.0",
     "http": "~0.0.0",
+    "mongodb": "^2.1.18",
     "multer": "^1.1.0",
+    "node-mongo": "0.0.1",
     "watson-developer-cloud": "^1.4.1"
   },
   "repository": {},

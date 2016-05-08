@@ -8,8 +8,8 @@ app.config(["$routeProvider","$locationProvider","recorderServiceProvider",funct
 		templateUrl: "partials/record.html",
 		controller: "RecordingController"
 	}).otherwise({
-		redirectTo: "/index"
+		redirectTo: "/record"
 	});
 	$locationProvider.html5Mode(true);
-	RecorderServiceProvider.withMp3Conversion(false);
+	RecorderServiceProvider.withMp3Conversion(true);
 }]);
