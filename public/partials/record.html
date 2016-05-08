@@ -1,5 +1,5 @@
 <div>
-    <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
+    <ng-audio-recorder id='audioInput' audio-model='recordedInput' time-limit="15000">
         <!-- Start controls, exposed via recorder-->
         <div ng-if="recorder.isAvailable">
             <button kendo-button ng-click="recorder.startRecord()" type="button" ng-disabled="recorder.status.isRecording">

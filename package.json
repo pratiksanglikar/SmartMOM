@@ -12,8 +12,10 @@
     "crypto": "0.0.3",
     "ejs": "~2.4.1",
     "express": "4.13.x",
+    "fs-extra": "^0.30.0",
     "http": "~0.0.0",
-    "multer": "^1.1.0"
+    "multer": "^1.1.0",
+    "watson-developer-cloud": "^1.4.1"
   },
   "repository": {},
   "engines": {
