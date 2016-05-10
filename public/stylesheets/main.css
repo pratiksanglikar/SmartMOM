@@ -310,7 +310,7 @@ section {
 
 .our-services .col-sm-4:nth-child(4), 
 .our-services .col-sm-4:nth-child(5), 
-.our-services .col-sm-4:nth-child(6) {
+.our-services .col-sm-4:nth-child(6){
   border-bottom:0;
   padding-top: 60px;
 }
