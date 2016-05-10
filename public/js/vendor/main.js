@@ -120,17 +120,26 @@ jQuery(function($) {
 	});
 
 	// Contact form
-	var form = $('#main-contact-form');
-	form.submit(function(event){
+	var form = $('#login-button');
+	form.click(function(event){
+		var username = $("#login-username").value();
+		var password = $("#login-password").value();
+		console.log("Username : " + username);
+		console.log("Password : " + password);
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
-		$.ajax({
-			url: $(this).attr('action'),
+		$.ajax("http://smartmom.mybluemix.net/auth/login",{
+
+			type: "POST",
+			data: {
+				username: username,
+				password: password
+			},
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Signing in...</p>').fadeIn() );
 			}
 		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
+			form_status.html('<p class="text-success"></p>').delay(3000).fadeOut();
 		});
 	});
 
