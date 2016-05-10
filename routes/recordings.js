@@ -6,25 +6,20 @@ var router = express.Router();
 var crypto = require("crypto");
 var multer = require('multer');
 var watson_handler = require("../javascripts/watson/watson_handler");
-/*var storage = multer.diskStorage({
-	destination:  './uploads/',
-	filename: function (req, file, cb) {
-		crypto.pseudoRandomBytes(16, function (err, raw) {
-			if (err)
-				return cb(err);
-			cb(null, raw.toString('hex') + ".wav");
-		});
-	}
-});*/
+var momcore = require("../javascripts/watson/momcore");
 
 var storage = multer.diskStorage({
 	destination:  './uploads/',
 	filename: function (req, file, cb) {
-		crypto.pseudoRandomBytes(16, function (err, raw) {
-			if (err) {
-				return cb(err);
-			}
-			cb(null, "sample.wav");
+		var username = req.session.user.username || "test";
+		var currentTime = new Date().getTime();
+		var filename = username + currentTime + ".wav";
+		var promise = momcore.addNewFile(username, filename, currentTime);
+		promise.done(function (filename) {
+			console.log("file " + filename + " inserted successfully");
+			cb(null, filename);
+		}, function (error) {
+			cb(error, null);
 		});
 	}
 });
