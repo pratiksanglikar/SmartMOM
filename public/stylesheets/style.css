@@ -89,8 +89,15 @@ pre {
 	width: 1170px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 100px;
 	padding-right: 15px;
 	padding-left: 15px;
+	padding-top: 25px;
+	position: relative;
+}
+
+.para{
+	font-size: 35%;
 }
 
 .row{
@@ -98,12 +105,10 @@ pre {
 	margin-right: -15px;
 }
 
-.col-sm-4{
+.col-sm-3, .col-xs-12, .col-lg-2{
 	float: left;
 	position: relative;
 	min-height: 1px;
-	padding-left: 15px;
-	padding-right: 15px;
 }
 
 .text-center{
