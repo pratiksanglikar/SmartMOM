@@ -32,6 +32,11 @@ h3 {
   font-size: 18px;
 }
 
+.headPara{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
+}
+
 .parallax {
   background-size: cover;
   background-repeat: no-repeat;
@@ -322,24 +327,7 @@ section {
 /*************************
 ********About CSS*******
 **************************/
-#about-us {
-  background-image: url(../images/about-bg.jpg);
-  padding: 60px 0;
-}
 
-#about-us h2 {
-  margin-top: 0;
-  color: #fff;
-}
-
-#about-us .lead {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-#about-us h1 {
-  margin-bottom: 30px;
-}
 
 .progress{
   height: 20px;
@@ -579,81 +567,7 @@ section {
 }
 
 
-/*************************
-*******Features CSS*******
-**************************/
-#features {
-  text-align: center;
-  background-image: url(../images/features-bg.jpg);
-}
 
-#features i {
-  font-size: 48px;
-}
-
-#features h3 {
-  margin-top: 15px;
-  font-size: 30px;
-  margin-bottom: 7px;
-  color: #fff;
-}
-
-#features .slider-overlay {
-  opacity: 0.8;
-}
-
-
-/*************************
-*****Pricing Table CSS****
-**************************/
-.pricing-table {
-  text-align: center;
-}
-
-.single-table {
-  padding: 30px 20px 20px;
-  border:1px solid #f2f2f2;
-}
-
-.single-table h3 {
-  margin-top: 0;
-  padding: 0;
-  font-size: 18px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.price {
-  font-size: 36px;
-  line-height: 36px;
-}
-
-.price span {
-  font-size: 14px;
-  line-height: 14px;
-}
-
-.single-table ul {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0;
-}
-
-.single-table ul li {
-  line-height: 30px;
-}
-
-.single-table.featured {  
-  color: #fff;
-}
-
-.single-table.featured h3 { 
-  color: #fff;
-}
-
-.single-table.featured .btn.btn-primary {
-  background-color: #fff;
-}
 
 /*************************
 ********Twitter CSS*******
@@ -855,10 +769,6 @@ section {
   padding-bottom: 0;
 }
 
-#google-map {
-  height: 350px;
-}
-
 #contact-us {
   background-image:url(../images/contact-bg.jpg);
   padding-bottom: 90px; 
@@ -978,5 +888,3 @@ ul.address {
 }
 
 /*Presets*/
-
-
