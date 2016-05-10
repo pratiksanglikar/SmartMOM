@@ -1,32 +1,32 @@
 <div>
 <link rel="stylesheet" href="/stylesheets/style.css"/>
-<link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
 <div id="featureWrap">
-    <div class ="container">
+    <div class ="container col-md-offset-2">
         <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
             <!-- Start controls, exposed via recorder-->
 
             <div ng-if="recorder.isAvailable" class ="row">
 
-                <div class="col-sm-3 col-xs-3 text-center feature">
+                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
                     <button kendo-button ng-click="recorder.startRecord()" class="fa fa-tablet icon" ng-disabled="recorder.status.isRecording">
-
+                        <p class="para">Record</p>
                     </button>
                 </div>
-                <div class="col-sm-3 col-xs-3 text-center feature">
+                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
                     <button kendo-button  ng-click="recorder.stopRecord()" class="fa fa-tablet icon" ng-disabled="recorder.status.isRecording === false">
-
+                        <p class="para">Stop</p>
                     </button>
                 </div>
-                <div class="col-sm-3 col-xs-3 text-center feature">
+                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
                     <button kendo-button  ng-click="recorder.playbackRecording()" class="fa fa-tablet icon"
                             ng-disabled="recorder.status.isRecording || !recorder.audioModel">
-
+                        <p class="para">Play</p>
                     </button>
                 </div>
-                <div class="col-sm-3 col-xs-3 text-center feature">
+                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
                     <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon">
-
+                        <p class="para">Upload</p>
                     </button>
                 </div>
             </div>
