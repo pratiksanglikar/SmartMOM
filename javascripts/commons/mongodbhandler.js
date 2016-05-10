@@ -22,14 +22,14 @@ exports.connect = function (url, callback) {
 		options: {
 			server: {
 				auto_reconnect: true,
-				poolSize: 10,
+				poolSize: 50,
 				socketOptions: {
 					keepAlive: 1
 				}
 			},
 			db: {
-				numberOfRetries: 10,
-				retryMiliSeconds: 1000
+				numberOfRetries: 100,
+				retryMiliSeconds: 10
 			}
 		}
 	}, function (err, _db) {
