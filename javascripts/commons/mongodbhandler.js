@@ -1,10 +1,3 @@
-/**
- * Created by pratiksanglikar on 24/04/16.
- */
-/**
- * Created by pratiksanglikar on 12/04/16.
- */
-//const MONGODB_URL = "mongodb://localhost:27017/amazonfresh";
 const MONGODB_URL = "mongodb://smartmom:smartmom@ds019481.mlab.com:19481/smartmom";
 exports.MONGODB_URL = MONGODB_URL;
 var MongoClient = require('mongodb').MongoClient;
