@@ -8,15 +8,18 @@
   "dependencies": {
     "body-parser": "~1.15.0",
     "cfenv": "1.0.x",
+    "connect-mongo": "^1.1.0",
     "cookie-parser": "~1.4.1",
     "crypto": "0.0.3",
     "ejs": "~2.4.1",
     "express": "4.13.x",
+    "express-session": "^1.13.0",
     "fs-extra": "^0.30.0",
     "http": "~0.0.0",
     "mongodb": "^2.1.18",
     "multer": "^1.1.0",
     "node-mongo": "0.0.1",
+    "q": "^1.4.1",
     "watson-developer-cloud": "^1.4.1"
   },
   "repository": {},
