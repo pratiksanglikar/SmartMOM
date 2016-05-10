@@ -122,14 +122,11 @@ jQuery(function($) {
 	// Contact form
 	var form = $('#login-button');
 	form.click(function(event){
-		var username = $("#login-username").value();
-		var password = $("#login-password").value();
-		console.log("Username : " + username);
-		console.log("Password : " + password);
+		var username = $("#login-username").val();
+		var password = $("#login-password").val();
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
 		$.ajax("http://smartmom.mybluemix.net/auth/login",{
-
 			type: "POST",
 			data: {
 				username: username,
@@ -137,8 +134,12 @@ jQuery(function($) {
 			},
 			beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Signing in...</p>').fadeIn() );
+			},
+			error: function () {
+				form_status.html('<p class="text-error">Invalid credentials!</p>').delay(3000).fadeOut();
 			}
-		}).done(function(data){
+		}).done(function(data) {
+			window.location.href = "http://smartmom.mybluemix.net/recordings";
 			form_status.html('<p class="text-success"></p>').delay(3000).fadeOut();
 		});
 	});
