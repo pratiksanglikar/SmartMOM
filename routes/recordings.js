@@ -14,6 +14,7 @@ var storage = multer.diskStorage({
 		var username = req.session.user.username || "test";
 		var currentTime = new Date().getTime();
 		var filename = username + currentTime + ".wav";
+		req.filename = filename;
 		var promise = momcore.addNewFile(username, filename, currentTime);
 		promise.done(function (filename) {
 			console.log("file " + filename + " inserted successfully");
@@ -31,7 +32,6 @@ var upload = multer({
 /* GET home page. */
 router.get('/', function(req, res) {
 	console.log("Got request");
-	momcore.
 	res.render('record');
 });
 
@@ -47,12 +47,13 @@ router.get("/all", function (req, res, next) {
 });
 
 router.post('/', upload, function(req, res) {
+	watson_handler.postToWatson(req.filename);
 	res.send({
 		status: "OK"
 	});
 });
 
-router.get("/:filename", function (req, res, next) {
+router.get("/:filename", function (req, res) {
 	var file = "./uploads/"+ req.params.filename;
 	res.download(file);
 });
