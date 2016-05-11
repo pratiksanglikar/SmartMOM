@@ -40,7 +40,7 @@
                     <% for(var i in details.relations) { %>
 
                     <li>
-                        <% details.relations[i].subject.text + details.relations[i].action.text + details.relations[i].object.text; %>
+                        <%= details.relations[i].subject.text +" "+ details.relations[i].action.text +" "+  details.relations[i].object.text; %>
                     </li>
                     <% } %>
                 </ul>
