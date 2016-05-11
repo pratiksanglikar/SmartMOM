@@ -47,6 +47,8 @@ app.controller("RecordingController", ["$scope", "$http",function ($scope, $http
 			{ field: "filename", title:"File Name", width: "15rem" },
 			{ field: "created_on", title:"Creation Date", width: "15rem" }
 		],
-		rowTemplate: "<div class='author file-row'>#:author#</div> <div class='filename file-row'>#:filename#</div><div class='created_on file-row'>#:created_on#</div><br>"
+		rowTemplate: "<td><div class='author file-row'>#:author#</div></td> " +
+		"<td><a href=#:'/details/' + filename # class='filename file-row'>#:filename#</a></td>" +
+		"<td><div class='created_on file-row'>#:created_on#</div></td><br>"
 	};
 }]);
