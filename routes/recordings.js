@@ -53,7 +53,11 @@ router.post('/', upload, function(req, res) {
 	});
 });
 
+<<<<<<< HEAD
 router.get("/:filename", function (req, res) {
+=======
+router.get("/download/:filename", function (req, res, next) {
+>>>>>>> 202209d... Updated record.html added image t feature wrap...
 	var file = "./uploads/"+ req.params.filename;
 	res.download(file);
 });
