@@ -52,7 +52,7 @@ router.post('/', upload, function(req, res) {
 	});
 });
 
-router.get("/:filename", function (req, res, next) {
+router.get("/download/:filename", function (req, res, next) {
 	var file = "./uploads/"+ req.params.filename;
 	res.download(file);
 });

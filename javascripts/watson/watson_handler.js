@@ -25,7 +25,7 @@ var concepts_insights = watson.concept_insights({
 });
 
 var params = {
-	audio: fs.createReadStream('uploads/test1462913230396.wav'),
+	audio: fs.createReadStream('uploads/test1462930446918.wav'),
 	content_type: 'audio/wav',
 	timestamps: true,
 	word_alternatives: 0.9,
