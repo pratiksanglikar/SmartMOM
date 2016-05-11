@@ -116,6 +116,21 @@ pre {
 	position: relative;
 	min-height: 1px;
 }
+.fa1{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 60px;
+	text-rendering: auto;
+	transform: translate(0, 0);
+}
+
+.fa12{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 40px;
+	text-rendering: auto;
+	transform: translate(0, 0);
+}
 
 .text-center{
 	text-align: center;

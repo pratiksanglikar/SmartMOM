@@ -1,6 +1,7 @@
 <div>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
     <div id="featureWrap">
         <div class="container col-md-offset-2">
             <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
@@ -9,26 +10,26 @@
                 <div ng-if="recorder.isAvailable" class="row">
 
                     <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                        <button kendo-button ng-click="recorder.startRecord()" class="fa fa-tablet icon"
+                        <button kendo-button ng-click="recorder.startRecord()" class="icon"
                                 ng-disabled="recorder.status.isRecording">
-                            <p class="para">Record</p>
+                           <i class="fa1 fa-microphone"></i>
                         </button>
                     </div>
                     <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                        <button kendo-button ng-click="recorder.stopRecord()" class="fa fa-tablet icon1"
+                        <button kendo-button ng-click="recorder.stopRecord()" class="icon1"
                                 ng-disabled="recorder.status.isRecording === false">
-                            <p class="para">Stop</p>
+                            <i class="fa12 fa-stop"></i>
                         </button>
                     </div>
                     <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                        <button kendo-button ng-click="recorder.playbackRecording()" class="fa fa-tablet icon2"
+                        <button kendo-button ng-click="recorder.playbackRecording()" class="icon2"
                                 ng-disabled="recorder.status.isRecording || !recorder.audioModel">
-                            <p class="para">Play</p>
+                            <i class="fa1 fa-play-circle-o"></i>
                         </button>
                     </div>
                     <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                        <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon1">
-                            <p class="para">Upload</p>
+                        <button kendo-button ng-click="recorder.upload()" class="icon1">
+                            <i class="fa1 fa-cloud-upload"></i>
                         </button>
                     </div>
                 </div>
