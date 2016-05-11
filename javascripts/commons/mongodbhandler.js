@@ -1,5 +1,5 @@
-const MONGODB_URL = "mongodb://smartmom:smartmom@ds019481.mlab.com:19481/smartmom";
-//const MONGODB_URL = "mongodb://localhost:27017/smartmom";
+//const MONGODB_URL = "mongodb://smartmom:smartmom@ds019481.mlab.com:19481/smartmom";
+const MONGODB_URL = "mongodb://localhost:27017/smartmom";
 exports.MONGODB_URL = MONGODB_URL;
 var MongoClient = require('mongodb').MongoClient;
 var db;
