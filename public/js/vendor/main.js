@@ -126,7 +126,7 @@ jQuery(function($) {
 		var password = $("#login-password").val();
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
-		$.ajax("http://smartmom.mybluemix.net/auth/login",{
+		$.ajax("https://smartmom.mybluemix.net/auth/login",{
 			type: "POST",
 			data: {
 				username: username,
@@ -139,7 +139,7 @@ jQuery(function($) {
 				form_status.html('<p class="text-error">Invalid credentials!</p>').delay(3000).fadeOut();
 			}
 		}).done(function(data) {
-			window.location.href = "http://smartmom.mybluemix.net/recordings";
+			window.location.href = "https://smartmom.mybluemix.net/recordings";
 			form_status.html('<p class="text-success"></p>').delay(3000).fadeOut();
 		});
 	});

@@ -25,7 +25,7 @@ var concepts_insights = watson.concept_insights({
 });
 
 var params = {
-	audio: fs.createReadStream('uploads/sample2.wav'),
+	audio: fs.createReadStream('uploads/test1462913230396.wav'),
 	content_type: 'audio/wav',
 	timestamps: true,
 	word_alternatives: 0.9,
@@ -90,8 +90,12 @@ exports.postToWatson = function () {
 			});*/
 
 
-			alchemyk.relations("by the library I'm it was nice meeting you yeah should hang out later cool assist morning class then alright later. I'm a good boy", {text: "hi my name is mark mark until glad to meet you yeah so are you from I'm from Houston Texas all I'm from southern California what year are you I'm a freshman this is my first year to so make you decide to come to California for school I hear Austin is a good school Sir right but I think Berkeley's better so is this where you want to come tell you the truth I want to go to Stanford I made it on the waiting list but ninety nine percent of the people accepted to Stanford go there like who wouldn't right very true but this is still a good school I'm not complaining I just know that I want to come to California Texas is cool and all but I wanted to experience different things that's good do you know what you plan on majoring in I was thinking about political science but now I'm leaning towards English literature how about you I plan on majoring in double the do you know where the Smith building is I have to pick up the syllabus for my psychology class I missed the first day that's a great start it's over there by the library it was nice meeting you yeah should hang out later cool assist morning class then alright later"
-			}, function(err, response) {
+			//alchemyk.relations("by the library I'm it was nice meeting you yeah should hang out later cool assist morning class then alright later. I'm a good boy",
+			finalTextString = "by the library I'm it was nice meeting you yeah should hang out later cool assist morning class then alright later. I'm a good boy";
+			console.log("FIN : " + finalTextString);
+			alchemyk.relations(finalTextString,
+				{},
+				function(err, response) {
 				if (err) throw err;
 
 				// See http://www.alchemyapi.com/api/relation/htmlc.html for format of returned object
