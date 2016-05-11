@@ -23,13 +23,13 @@ exports.connect = function (url, callback) {
 		options: {
 			server: {
 				auto_reconnect: true,
-				poolSize: 50,
+				poolSize: 10,
 				socketOptions: {
 					keepAlive: 1
 				}
 			},
 			db: {
-				numberOfRetries: 100,
+				numberOfRetries: 10,
 				retryMiliSeconds: 10
 			}
 		}
