@@ -60,6 +60,7 @@ exports.postToWatson = function (filename) {
 				mom.relations = values[1];
 				mom.coreconcepts = values[2];
 				mom.filename = filename;
+				mom.transcript = finalTextString;
 				MongoDB.collection("mom").insert(mom).then(function () {
 					deferred.resolve(mom);
 				}).catch(function (error) {
