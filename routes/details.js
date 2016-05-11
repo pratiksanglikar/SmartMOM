@@ -1,13 +1,14 @@
 
 var express = require("express");
 var router = express.Router();
-//var Auth = require("../javascripts/authentication/Auth");
+var momcore = require("../javascripts/authentication/momcore");
 
 
 
 router.get("/:filename", function (req, res, next) {
 	var file = req.params.filename;
-	res.render('details');
+	var details =  momcore.getMOMByFileName(file);
+	res.render('details', {details: details});
 	//res.download(file);
 });
 
