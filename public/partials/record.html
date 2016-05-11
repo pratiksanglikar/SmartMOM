@@ -14,18 +14,18 @@
                     </button>
                 </div>
                 <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button  ng-click="recorder.stopRecord()" class="fa fa-tablet icon" ng-disabled="recorder.status.isRecording === false">
+                    <button kendo-button  ng-click="recorder.stopRecord()" class="fa fa-tablet icon1" ng-disabled="recorder.status.isRecording === false">
                         <p class="para">Stop</p>
                     </button>
                 </div>
                 <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button  ng-click="recorder.playbackRecording()" class="fa fa-tablet icon"
+                    <button kendo-button  ng-click="recorder.playbackRecording()" class="fa fa-tablet icon2"
                             ng-disabled="recorder.status.isRecording || !recorder.audioModel">
                         <p class="para">Play</p>
                     </button>
                 </div>
                 <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon">
+                    <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon1" ng-disabled="recorder.status.isRecording === false">
                         <p class="para">Upload</p>
                     </button>
                 </div>
