@@ -34,6 +34,17 @@ router.get('/', function(req, res) {
 	res.render('record');
 });
 
+router.get("/all", function (req, res, next) {
+	var deferred = momcore.getAllFiles(req.session.user);
+	deferred.done(function (result) {
+		res.send(result);
+	}, function (error) {
+		res.status(500).send({
+			error: error
+		});
+	});
+});
+
 router.post('/', upload, function(req, res) {
 	res.send({
 		status: "OK"
