@@ -8,6 +8,11 @@ body,html {
 	margin: 0 auto;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	color: #ffffff;
+	background: url("../images/meetup12.jpg") center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 a {
@@ -117,7 +122,82 @@ pre {
 
 #featureWrap .icon {
 	background-color: #00a2eb;
-	border: 4px solid #00a2eb;
+	border: 8px solid #00a2eb;
+	border-radius: 50%;
+	color: #ffffff;
+	display: block;
+	font-size: 80px;
+	height: 148px;
+	line-height: 140px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 148px;
+	transform-style: flat;
+	transition: all 250ms ease-out;
+}
+#featureWrap .icon:hover {
+	background-color: #0a8897;
+	border: 8px solid #0a8897;
+	border-radius: 50%;
+	box-shadow: 0 15px 10px 10px #313f4a;
+}
+
+#featureWrap .icon:disabled{
+	background-color: #bbbbbb;
+	border: 8px solid #bbbbbb;
+	border-radius: 50%;
+}
+
+
+#featureWrap .icon1:disabled {
+	background-color: #bbbbbb;
+	border: 8px solid #bbbbbb;
+	border-radius: 50%;
+	color: #ffffff;
+	display: block;
+	font-size: 80px;
+	height: 148px;
+	line-height: 140px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 148px;
+}
+
+#featureWrap .icon1{
+	background-color: #00a2eb;
+	border: 8px solid #00a2eb;
+	border-radius: 50%;
+	color: #ffffff;
+	display: block;
+	font-size: 80px;
+	height: 148px;
+	line-height: 140px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 148px;
+}
+
+#featureWrap .icon2:disabled {
+	background-color: #bbbbbb;
+	border: 8px solid #bbbbbb;
+	border-radius: 50%;
+	color: #ffffff;
+	display: block;
+	font-size: 80px;
+	height: 148px;
+	line-height: 140px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 148px;
+}
+
+#featureWrap .icon2{
+	background-color: #00a2eb;
+	border: 8px solid #00a2eb;
 	border-radius: 50%;
 	color: #ffffff;
 	display: block;
