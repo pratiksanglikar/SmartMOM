@@ -61,3 +61,27 @@ exports.getMOMByFileName = function (filename) {
 	});
 	return deferred.promise;
 }
+
+exports.getAllFiles = function (user) {
+	var deferred = Q.defer();
+	var files = [];
+	if(!user) {
+		deferred.reject("Bad Request");
+		return deferred.promise();
+	}
+	var cursor = MongoDB.collection("files").find({
+		author: user.username
+	});
+	cursor.each(function (error, doc) {
+		if(error) {
+			deferred.reject(error);
+		} else {
+			if(doc != null) {
+				files.push(doc);
+			} else {
+				deferred.resolve(files);
+			}
+		}
+	});
+	return deferred.promise;
+}

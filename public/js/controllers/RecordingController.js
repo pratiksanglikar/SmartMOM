@@ -3,6 +3,50 @@
  */
 var app = angular.module("SmartMOM");
 
-app.controller("RecordingController", ["$scope", function ($scope) {
-	$scope.message = "Welcome to SmartMOM!";
+app.controller("RecordingController", ["$scope", "$http",function ($scope, $http) {
+	init = function () {
+		$http({
+			method: 'GET',
+			url: '/recordings/all'
+		}).then(function (result) {
+			$scope.files = _processData(result.data);
+			$scope.filegrid.refresh();
+		}).catch(function(error) {
+			alert("Some error occurred!");
+		});
+	};
+	init();
+	_processData = function (array) {
+		var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+		for(var i = 0 ; i < array.length; i++) {
+			var newDate = new Date(array[i].created_on);
+			var dateString = "";
+			var date = "0" + newDate.getUTCDate();
+			date = date.substr(date.length-2);
+			var hours = "0" + newDate.getUTCHours();
+			hours = hours.substr(hours.length-2);
+
+			var minutes = "0" + newDate.getUTCMinutes();
+			minutes = minutes.substr(minutes.length-2);
+
+			var seconds = "0" + newDate.getUTCSeconds();
+			seconds = seconds.substr(seconds.length-2);
+
+			dateString += months[newDate.getUTCMonth()] + " " + date + ", " + newDate.getUTCFullYear();
+			dateString += " " + hours + ":" + minutes + ":" + seconds;
+			array[i].created_on = dateString;
+		}
+		return array;
+	};
+
+	$scope.detailGridOptions = {
+		dataSource: $scope.files,
+		sortable: true,
+		columns: [
+			{ field: "author", title:"Author", width: "15rem" },
+			{ field: "filename", title:"File Name", width: "15rem" },
+			{ field: "created_on", title:"Creation Date", width: "15rem" }
+		],
+		rowTemplate: "<div class='author file-row'>#:author#</div> <div class='filename file-row'>#:filename#</div><div class='created_on file-row'>#:created_on#</div><br>"
+	};
 }]);

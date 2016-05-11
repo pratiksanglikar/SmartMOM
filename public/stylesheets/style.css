@@ -222,3 +222,30 @@ pre {
 
 
 
+.file-item {
+	margin-top: 1rem;
+}
+
+.file-list-author .file-list-filename .file-list-timestamp {
+	color: #00a2eb;
+	font-weight: bold;
+}
+
+.file-row {
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+	color: #00a2eb;
+	font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+}
+
+.author {
+	width: 15rem;
+}
+
+.filename {
+	width: 15rem;
+}
+
+.created_on {
+	width: 15rem;
+}

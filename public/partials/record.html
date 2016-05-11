@@ -1,45 +1,60 @@
 <div>
-<link rel="stylesheet" href="/stylesheets/style.css"/>
-<link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
-<div id="featureWrap">
-    <div class ="container col-md-offset-2">
-        <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
-            <!-- Start controls, exposed via recorder-->
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <div id="featureWrap">
+        <div class="container col-md-offset-2">
+            <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
+                <!-- Start controls, exposed via recorder-->
 
-            <div ng-if="recorder.isAvailable" class ="row">
+                <div ng-if="recorder.isAvailable" class="row">
 
-                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button ng-click="recorder.startRecord()" class="fa fa-tablet icon" ng-disabled="recorder.status.isRecording">
-                        <p class="para">Record</p>
-                    </button>
+                    <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
+                        <button kendo-button ng-click="recorder.startRecord()" class="fa fa-tablet icon"
+                                ng-disabled="recorder.status.isRecording">
+                            <p class="para">Record</p>
+                        </button>
+                    </div>
+                    <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
+                        <button kendo-button ng-click="recorder.stopRecord()" class="fa fa-tablet icon1"
+                                ng-disabled="recorder.status.isRecording === false">
+                            <p class="para">Stop</p>
+                        </button>
+                    </div>
+                    <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
+                        <button kendo-button ng-click="recorder.playbackRecording()" class="fa fa-tablet icon2"
+                                ng-disabled="recorder.status.isRecording || !recorder.audioModel">
+                            <p class="para">Play</p>
+                        </button>
+                    </div>
+                    <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
+                        <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon1"
+                                ng-disabled="recorder.status.isRecording === false">
+                            <p class="para">Upload</p>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button  ng-click="recorder.stopRecord()" class="fa fa-tablet icon1" ng-disabled="recorder.status.isRecording === false">
-                        <p class="para">Stop</p>
-                    </button>
-                </div>
-                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button  ng-click="recorder.playbackRecording()" class="fa fa-tablet icon2"
-                            ng-disabled="recorder.status.isRecording || !recorder.audioModel">
-                        <p class="para">Play</p>
-                    </button>
-                </div>
-                <div class="col-sm-3 col-xs-12 col-lg-2 text-center feature">
-                    <button kendo-button ng-click="recorder.upload()" class="fa fa-tablet icon1" ng-disabled="recorder.status.isRecording === false">
-                        <p class="para">Upload</p>
-                    </button>
-                </div>
-            </div>
 
-            <div ng-if="!recorder.isAvailable">
-                Audio Recoding is not supported by your browser.
-            </div>
-            <!-- End controls-->
-        </ng-audio-recorder>
+                <div ng-if="!recorder.isAvailable">
+                    Audio Recoding is not supported by your browser.
+                </div>
+                <!-- End controls-->
+            </ng-audio-recorder>
+
+        </div>
 
     </div>
-
-</div>
-
-<script src="/js/vendor/jquery-2.2.3.min.js"></script>
+    <div class="col-md-8 col-md-offset-2 container">
+        <div kendo-grid="filegrid" k-data-source="files" k-options="detailGridOptions"></div>
+        <!--<div class="container file-item" ng-repeat="file in files" style="width: 100%">
+            <span class="file-list-author col-md-3">
+                {{file.author}}
+            </span>
+            <span class="file-list-filename col-md-6">
+                {{file.filename}}
+            </span>
+            <span class="file-list-timestamp col-md-3">
+                {{file.created_on}}
+            </span>
+        </div>-->
+    </div>
 </div>
