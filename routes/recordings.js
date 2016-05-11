@@ -31,6 +31,7 @@ var upload = multer({
 /* GET home page. */
 router.get('/', function(req, res) {
 	console.log("Got request");
+	momcore.
 	res.render('record');
 });
 
