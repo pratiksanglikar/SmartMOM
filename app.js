@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var http = require("http");
 var routes = require('./routes/index');
 var homeRoute = require('./routes/home');
+var detailsRoute = require('./routes/details');
 var app = express();
 var session = require("express-session");
 var mongoStore = require("connect-mongo")(session);
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use("/recordings", recordingRoute);
 app.use("/home", homeRoute);
+app.use("/details", detailsRoute);
 app.use("/auth", Auth);
 
 // catch 404 and forward to error handler
