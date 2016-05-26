@@ -4,7 +4,7 @@
 var app = angular.module("SmartMOM");
 
 app.controller("RecordingController", ["$scope", "$http",function ($scope, $http) {
-	init = function () {
+	init1 = function () {
 		$http({
 			method: 'GET',
 			url: '/recordings/all'
@@ -15,6 +15,13 @@ app.controller("RecordingController", ["$scope", "$http",function ($scope, $http
 			alert("Some error occurred!");
 		});
 	};
+
+	init = function () {
+		init1();
+		setInterval(function(){
+			init1();
+		}, 30000);
+	}
 	init();
 	_processData = function (array) {
 		var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
