@@ -46,3 +46,64 @@ CHAIRMAN LEVI: This is a duly noticed meeting
  are all very grateful to you and to the Search
  Committee for working so well together. I want to
  congratulate you and thank you for doing just that.
+
+
+"relations":[
+ {
+    "subject" :
+    {
+        "text":"We are",
+    }
+    "action":
+    {
+        "text": "team number"
+    }
+    "object":
+    {
+        "text":"4"
+    }
+}, "subject" :
+       {
+           "text":"solve",
+       }
+       "action":
+       {
+           "text": "the"
+       }
+       "object":
+       {
+           "text":"problem which every employee in an organization chasers"
+       }, "subject" :
+              {
+                  "text":"important",
+              }
+              "action":
+              {
+                  "text": "key points"
+              }
+              "object":
+              {
+                  "text":"may be missed "
+              }, "subject" :
+                             {
+                                 "text":"increasing efficiency and productivity",
+                             }
+                             "action":
+                             {
+                                 "text": "  "
+                             }
+                             "object":
+                             {
+                                 "text":"  "
+                             }, "subject" :
+                                                           {
+                                                               "text":"eliminates this problem by showing unbiased summary from the meeting",
+                                                           }
+                                                           "action":
+                                                           {
+                                                               "text": "  "
+                                                           }
+                                                           "object":
+                                                           {
+                                                               "text":"  "
+                                                           }]
